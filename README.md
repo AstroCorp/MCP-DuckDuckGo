@@ -13,6 +13,9 @@ MCP DuckDuckGo is a Model Context Protocol (MCP) server that enables AI assistan
 > [!WARNING]
 > This is an experimental project. Currently, it does not support websites that load content dynamically with JavaScript. Only static HTML content can be extracted.
 
+> [!WARNING]
+> Be aware of prompt injection risks. Web content extracted from untrusted sources may contain malicious instructions designed to manipulate the AI assistant's behavior. Review extracted content carefully before using it in sensitive contexts.
+
 **Features:**
 - 🔍 Search the web using DuckDuckGo
 - 📄 Extract and convert web content to clean Markdown
@@ -111,6 +114,9 @@ MCP DuckDuckGo es un servidor del Protocolo de Contexto de Modelo (MCP) que perm
 
 > [!WARNING]
 > Este es un proyecto experimental. Actualmente, no soporta sitios web que cargan contenido dinámicamente con JavaScript. Solo se puede extraer contenido HTML estático.
+
+> [!WARNING]
+> Ten en cuenta los riesgos de inyección de prompts. El contenido web extraído de fuentes no confiables puede contener instrucciones maliciosas diseñadas para manipular el comportamiento del asistente de IA. Revisa el contenido extraído cuidadosamente antes de usarlo en contextos sensibles.
 
 **Características:**
 - 🔍 Búsqueda web usando DuckDuckGo

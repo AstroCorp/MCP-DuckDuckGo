@@ -48,7 +48,7 @@ MCP DuckDuckGo is a Model Context Protocol (MCP) server that enables AI assistan
 
 4. **Configure your MCP client:**
    
-   Add the following configuration to your MCP settings file (e.g., `cline_mcp_settings.json` for Cline, or Claude Desktop config):
+   Add the following configuration to your MCP settings file:
 
    ```json
    {
@@ -150,7 +150,7 @@ MCP DuckDuckGo es un servidor del Protocolo de Contexto de Modelo (MCP) que perm
 
 4. **Configurar tu cliente MCP:**
    
-   Añade la siguiente configuración a tu archivo de configuración MCP (ej: `cline_mcp_settings.json` para Cline, o la configuración de Claude Desktop):
+   Añade la siguiente configuración a tu archivo de configuración MCP:
 
    ```json
    {

@@ -10,6 +10,9 @@
 
 MCP DuckDuckGo is a Model Context Protocol (MCP) server that enables AI assistants to search the internet using DuckDuckGo and extract clean, formatted content from web pages. It provides real-time access to current information, converting HTML pages into readable Markdown format.
 
+> [!WARNING]
+> This is an experimental project. Currently, it does not support websites that load content dynamically with JavaScript. Only static HTML content can be extracted.
+
 **Features:**
 - 🔍 Search the web using DuckDuckGo
 - 📄 Extract and convert web content to clean Markdown
@@ -24,12 +27,21 @@ MCP DuckDuckGo is a Model Context Protocol (MCP) server that enables AI assistan
 
 ### Installation
 
-| Step | Command | Description |
-|------|---------|-------------|
-| 1 | `git clone <repository-url>` | Clone the repository |
-| 2 | `cd MCP-DuckDuckGo` | Navigate to directory |
-| 3 | `pnpm install` | Install dependencies |
-| 4 | `pnpm build` | Build the project |
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd MCP-DuckDuckGo
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
+
+3. **Build the project:**
+   ```bash
+   pnpm build
+   ```
 
 4. **Configure your MCP client:**
    
@@ -97,6 +109,9 @@ MCP DuckDuckGo is a Model Context Protocol (MCP) server that enables AI assistan
 
 MCP DuckDuckGo es un servidor del Protocolo de Contexto de Modelo (MCP) que permite a los asistentes de IA buscar en internet usando DuckDuckGo y extraer contenido limpio y formateado de páginas web. Proporciona acceso en tiempo real a información actual, convirtiendo páginas HTML en formato Markdown legible.
 
+> [!WARNING]
+> Este es un proyecto experimental. Actualmente, no soporta sitios web que cargan contenido dinámicamente con JavaScript. Solo se puede extraer contenido HTML estático.
+
 **Características:**
 - 🔍 Búsqueda web usando DuckDuckGo
 - 📄 Extracción y conversión de contenido web a Markdown limpio
@@ -111,12 +126,21 @@ MCP DuckDuckGo es un servidor del Protocolo de Contexto de Modelo (MCP) que perm
 
 ### Instalación
 
-| Paso | Comando | Descripción |
-|------|---------|-------------|
-| 1 | `git clone <url-del-repositorio>` | Clonar el repositorio |
-| 2 | `cd MCP-DuckDuckGo` | Navegar al directorio |
-| 3 | `pnpm install` | Instalar dependencias |
-| 4 | `pnpm build` | Compilar el proyecto |
+1. **Clonar el repositorio:**
+   ```bash
+   git clone <url-del-repositorio>
+   cd MCP-DuckDuckGo
+   ```
+
+2. **Instalar dependencias:**
+   ```bash
+   pnpm install
+   ```
+
+3. **Compilar el proyecto:**
+   ```bash
+   pnpm build
+   ```
 
 4. **Configurar tu cliente MCP:**
    

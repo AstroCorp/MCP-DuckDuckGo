@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [22.x]
+        node-version: [26.x]
 
     steps:
     - name: Checkout code
@@ -25,7 +25,7 @@ jobs:
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
       with:
-        version: 10
+        version: 10.11.1
 
     - name: Setup Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
@@ -35,6 +35,9 @@ jobs:
 
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
+
+    - name: Install Playwright Chromium
+      run: pnpm exec playwright install --with-deps chromium
 
     - name: Run tests
       run: pnpm test

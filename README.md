@@ -6,202 +6,78 @@
 
 ## English
 
-### Description
-
-MCP DuckDuckGo is a Model Context Protocol (MCP) server that enables AI assistants to search the internet using DuckDuckGo and extract clean, formatted content from web pages. It provides real-time access to current information, converting HTML pages into readable Markdown format.
+MCP server that searches DuckDuckGo and extracts plain text from result pages (Playwright renders JavaScript).
 
 > [!WARNING]
-> This is an experimental project. Currently, it does not support websites that load content dynamically with JavaScript. Only static HTML content can be extracted.
+> Extracted web content may include prompt injection. Review it in sensitive contexts.
 
-> [!WARNING]
-> Be aware of prompt injection risks. Web content extracted from untrusted sources may contain malicious instructions designed to manipulate the AI assistant's behavior. Review extracted content carefully before using it in sensitive contexts.
+**Requires:** Node.js 26+, pnpm, Chromium (`pnpm exec playwright install chromium`)
 
-**Features:**
-- 🔍 Search the web using DuckDuckGo
-- 📄 Extract and convert web content to clean Markdown
-- ⚡ Per-domain rate limiting to avoid overwhelming servers
-- 💾 Smart caching (LRU cache with 10-minute TTL)
-- 🎯 Single unified `search` tool for simplicity
+```bash
+pnpm install
+pnpm exec playwright install chromium
+pnpm build
+```
 
-### Requirements
+MCP config:
 
-- **Node.js 22 or higher**
-- **pnpm**
+```json
+{
+  "mcpServers": {
+    "MCP-DuckDuckGo": {
+      "command": "node",
+      "args": ["C:\\Proyectos\\MCP-DuckDuckGo\\dist\\index.js"]
+    }
+  }
+}
+```
 
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd MCP-DuckDuckGo
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   pnpm install
-   ```
-
-3. **Build the project:**
-   ```bash
-   pnpm build
-   ```
-
-4. **Configure your MCP client:**
-   
-   Add the following configuration to your MCP settings file:
-
-   ```json
-   {
-     "mcpServers": {
-       "MCP-DuckDuckGo": {
-         "command": "node",
-         "args": [
-           "/path/to/mcps/MCP-DuckDuckGo/dist/index.js"
-         ]
-       }
-     }
-   }
-   ```
-
-   **Windows example:**
-   ```json
-   {
-     "mcpServers": {
-       "MCP-DuckDuckGo": {
-         "command": "node",
-         "args": [
-           "C:\\Users\\YourUsername\\mcps\\MCP-DuckDuckGo\\dist\\index.js"
-         ]
-       }
-     }
-   }
-   ```
-
-   **Linux/Mac example:**
-   ```json
-   {
-     "mcpServers": {
-       "MCP-DuckDuckGo": {
-         "command": "node",
-         "args": [
-           "/home/username/mcps/MCP-DuckDuckGo/dist/index.js"
-         ]
-       }
-     }
-   }
-   ```
-
-5. **Restart your MCP client** to load the new server.
-
-### Development
+**Tool `search`:** `query` (string), `numResults` (number, default 3). Returns plain text per result, separated by `---`.
 
 | Command | Description |
 |---------|-------------|
-| `pnpm dev` | Development mode (watch) |
-| `pnpm build` | Build the project |
-| `pnpm start` | Start the compiled server |
-| `pnpm test` | Run all tests |
-| `pnpm test:watch` | Run tests in watch mode |
-| `pnpm example` | Run example script |
+| `pnpm dev` | Watch mode |
+| `pnpm build` | Build |
+| `pnpm start` | Run server |
+| `pnpm test` | Tests |
+| `pnpm example` | Example script |
 
 ---
 
 ## Español
 
-### Descripción
-
-MCP DuckDuckGo es un servidor del Protocolo de Contexto de Modelo (MCP) que permite a los asistentes de IA buscar en internet usando DuckDuckGo y extraer contenido limpio y formateado de páginas web. Proporciona acceso en tiempo real a información actual, convirtiendo páginas HTML en formato Markdown legible.
+Servidor MCP que busca en DuckDuckGo y extrae texto plano de los resultados (Playwright renderiza JavaScript).
 
 > [!WARNING]
-> Este es un proyecto experimental. Actualmente, no soporta sitios web que cargan contenido dinámicamente con JavaScript. Solo se puede extraer contenido HTML estático.
+> El contenido extraído puede incluir inyección de prompts. Revísalo en contextos sensibles.
 
-> [!WARNING]
-> Ten en cuenta los riesgos de inyección de prompts. El contenido web extraído de fuentes no confiables puede contener instrucciones maliciosas diseñadas para manipular el comportamiento del asistente de IA. Revisa el contenido extraído cuidadosamente antes de usarlo en contextos sensibles.
+**Requiere:** Node.js 26+, pnpm, Chromium (`pnpm exec playwright install chromium`)
 
-**Características:**
-- 🔍 Búsqueda web usando DuckDuckGo
-- 📄 Extracción y conversión de contenido web a Markdown limpio
-- ⚡ Limitación de tasa por dominio para no sobrecargar servidores
-- 💾 Caché inteligente (LRU con TTL de 10 minutos)
-- 🎯 Herramienta única `search` unificada para simplicidad
+```bash
+pnpm install
+pnpm exec playwright install chromium
+pnpm build
+```
 
-### Requisitos
+Configuración MCP:
 
-- **Node.js 22 o superior**
-- **pnpm**
+```json
+{
+  "mcpServers": {
+    "MCP-DuckDuckGo": {
+      "command": "node",
+      "args": ["C:\\Proyectos\\MCP-DuckDuckGo\\dist\\index.js"]
+    }
+  }
+}
+```
 
-### Instalación
-
-1. **Clonar el repositorio:**
-   ```bash
-   git clone <url-del-repositorio>
-   cd MCP-DuckDuckGo
-   ```
-
-2. **Instalar dependencias:**
-   ```bash
-   pnpm install
-   ```
-
-3. **Compilar el proyecto:**
-   ```bash
-   pnpm build
-   ```
-
-4. **Configurar tu cliente MCP:**
-   
-   Añade la siguiente configuración a tu archivo de configuración MCP:
-
-   ```json
-   {
-     "mcpServers": {
-       "MCP-DuckDuckGo": {
-         "command": "node",
-         "args": [
-           "/ruta/a/mcps/MCP-DuckDuckGo/dist/index.js"
-         ]
-       }
-     }
-   }
-   ```
-
-   **Ejemplo Windows:**
-   ```json
-   {
-     "mcpServers": {
-       "MCP-DuckDuckGo": {
-         "command": "node",
-         "args": [
-           "C:\\Users\\TuUsuario\\mcps\\MCP-DuckDuckGo\\dist\\index.js"
-         ]
-       }
-     }
-   }
-   ```
-
-   **Ejemplo Linux/Mac:**
-   ```json
-   {
-     "mcpServers": {
-       "MCP-DuckDuckGo": {
-         "command": "node",
-         "args": [
-           "/home/usuario/mcps/MCP-DuckDuckGo/dist/index.js"
-         ]
-       }
-     }
-   }
-   ```
-
-5. **Reinicia tu cliente MCP** para cargar el nuevo servidor.
-
-### Desarrollo
+**Herramienta `search`:** `query` (string), `numResults` (number, default 3). Devuelve texto plano por resultado, separado por `---`.
 
 | Comando | Descripción |
 |---------|-------------|
-| `pnpm dev` | Modo desarrollo (watch) |
-| `pnpm build` | Compilar el proyecto |
-| `pnpm start` | Iniciar el servidor compilado |
-| `pnpm test` | Ejecutar todos los tests |
-| `pnpm test:watch` | Ejecutar tests en modo watch |
-| `pnpm example` | Ejecutar script de ejemplo |
+| `pnpm dev` | Modo watch |
+| `pnpm build` | Compilar |
+| `pnpm start` | Arrancar servidor |
+| `pnpm test` | Tests |
+| `pnpm example` | Script de ejemplo |
